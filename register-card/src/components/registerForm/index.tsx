@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import Header from '../header';
 
 interface IProps {
 
@@ -56,20 +55,11 @@ class RegisterForm extends Component<IProps, IState> {
         }
     }
 
-    renderHeader = () => {
-        return (
-            <div className="form-header">
-                <FontAwesomeIcon icon={faBars} className="header-icon" />
-                <p className="header-title">Register Card Form</p>
-            </div>
-        )
-    }
-
     render() {
         return (
             <div className="register-main">
                 <div className="register-form">
-                    {this.renderHeader()}
+                    <Header />
                     <div className="register-body">
                         <p>Welcome</p>
                         <form className="form" onSubmit={this.handleSubmit}>
