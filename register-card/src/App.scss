@@ -49,6 +49,8 @@
   .menu-body {
     padding: 20px;
   }
+  border-right: 1px solid black;
+  transition: left 1s ease-out;
 }
 
 .register-form .register-body {
@@ -90,5 +92,11 @@
     background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+  }
+}
+
+@media only screen and (max-width:767px){
+  .register-main{
+    width: 100%;
   }
 }

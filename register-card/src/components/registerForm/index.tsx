@@ -48,7 +48,7 @@ class RegisterForm extends Component<IProps, IState> {
             expiryDate
         ) {
             // TODO: call form submitting API
-            console.log("submit result", cardNumber, cvc, expiryDate);
+            console.log(`submit result: cardNumber:${cardNumber}, cvc:${cvc}, expiryDate:${expiryDate}`);
             this.setState({
                 cardNumber: '',
                 cvc: '',

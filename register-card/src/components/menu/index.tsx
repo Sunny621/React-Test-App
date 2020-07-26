@@ -19,10 +19,23 @@ class Menu extends Component<IProps,IState>{
         }
     }
 
+    componentDidMount(){
+        window.addEventListener('resize',this.onWindowResize);
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('resize',this.onWindowResize);
+    }
+
     getWindowWidth = () => {
         return document.body.clientWidth || document.documentElement.clientWidth;
     }
 
+    onWindowResize = ()=>{
+        this.setState({
+            initPos:this.getWindowWidth() > BREAK_POINT ? '-601px' : `-${this.getWindowWidth()+1}px`
+        })
+    }
 
     render() {
         const { menuStatus } = this.props;
