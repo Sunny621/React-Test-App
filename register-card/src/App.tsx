@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import './App.scss';
 import RegisterForm from './components/registerForm';
+import { connect } from 'react-redux';
 
-class App extends Component {
+interface IProps {
+  isMenuOpen: boolean
+}
+
+class App extends Component<IProps> {
   render() {
+    const { isMenuOpen } = this.props;
     return (
       <div className="App">
-        <RegisterForm/>
+        <RegisterForm isMenuOpen={isMenuOpen} userName="Tester User" />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  const { isMenuOpen } = state.registerReducer;
+  return {
+    isMenuOpen
+  }
+}
+
+export default connect(mapStateToProps)(App);

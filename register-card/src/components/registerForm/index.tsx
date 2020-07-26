@@ -3,7 +3,8 @@ import Header from '../header';
 import Menu from '../menu'
 
 interface IProps {
-
+    isMenuOpen: boolean,
+    userName: string
 }
 
 interface IState {
@@ -57,13 +58,14 @@ class RegisterForm extends Component<IProps, IState> {
     }
 
     render() {
+        const { isMenuOpen, userName } = this.props;
         return (
             <div className="register-main">
-                <Menu />
+                <Menu menuStatus={isMenuOpen} />
                 <div className="register-form">
-                    <Header formTitle="Register Card Form" icon="bars"  />
+                    <Header formTitle="Register Card Form" icon="bars" />
                     <div className="register-body">
-                        <p>Welcome</p>
+                        <p>Welcome {userName}</p>
                         <form className="form" onSubmit={this.handleSubmit}>
                             <label>Credit Card Number</label>
                             <input
