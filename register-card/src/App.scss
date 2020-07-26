@@ -10,7 +10,8 @@
   border-radius: 8px;
 }
 
-.register-form{
+.register-form,
+.register-menu {
   position: absolute;
   background-color: white;
   left: 0;
@@ -36,6 +37,17 @@
       display: inline-block;
       margin: 0;
     }
+  }
+}
+
+.register-form{
+  z-index: 1;
+}
+
+.register-menu {
+  z-index: 2;
+  .menu-body {
+    padding: 20px;
   }
 }
 

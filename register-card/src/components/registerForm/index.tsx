@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../header';
+import Menu from '../menu'
 
 interface IProps {
 
@@ -58,8 +59,9 @@ class RegisterForm extends Component<IProps, IState> {
     render() {
         return (
             <div className="register-main">
+                <Menu />
                 <div className="register-form">
-                    <Header />
+                    <Header formTitle="Register Card Form" icon="bars"  />
                     <div className="register-body">
                         <p>Welcome</p>
                         <form className="form" onSubmit={this.handleSubmit}>
